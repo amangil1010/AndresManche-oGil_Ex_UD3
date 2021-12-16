@@ -1,7 +1,10 @@
 
 import java.awt.event.KeyEvent;
 
-
+/**
+ * 
+ * @author Usuario Autor
+ */
 
 public class CrearPartido extends javax.swing.JFrame
 {
@@ -15,7 +18,10 @@ public class CrearPartido extends javax.swing.JFrame
         initComponents();
     }
 
-   
+   /**
+    * 
+    * @param ventana Crear Partido
+    */
     public CrearPartido(Apuesta ventana) 
     {
         initComponents();
@@ -69,7 +75,10 @@ public class CrearPartido extends javax.swing.JFrame
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * 
+ * @param p añadir partido
+ */
     public void añadePartido(String p)
     {
         v.añadePartido(p);
@@ -77,10 +86,17 @@ public class CrearPartido extends javax.swing.JFrame
         tPartido.requestFocus();
     }
     
+    /**
+     * 
+     * @param evt Eventos
+     */
     private void bAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarPartidoActionPerformed
         añadePartido(tPartido.getText());
     }//GEN-LAST:event_bAgregarPartidoActionPerformed
-
+/**
+ * 
+ * @param evt Eventos
+ */
     private void tPartidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPartidoKeyPressed
         if( evt.getKeyCode() == KeyEvent.VK_ENTER )
         {
@@ -88,7 +104,10 @@ public class CrearPartido extends javax.swing.JFrame
         }
     }//GEN-LAST:event_tPartidoKeyPressed
 
-    
+    /**
+     * 
+     * @param args Son Argumentos 
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -120,7 +139,9 @@ public class CrearPartido extends javax.swing.JFrame
             }
         });
     }
-
+/**
+ * 
+ */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAgregarPartido;
     private javax.swing.JLabel jLabel1;
