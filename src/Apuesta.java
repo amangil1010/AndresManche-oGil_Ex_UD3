@@ -8,10 +8,15 @@ import javax.swing.WindowConstants;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+/**
+ * 
+ * @author Usuario El que ha creado el Programa
+ */
 public class Apuesta extends javax.swing.JFrame {
 
-   
+   /**
+    * Apuestas
+    */
     public Apuesta() 
     {
         initComponents();
@@ -120,7 +125,10 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * 
+ * @param evt Son los eventos
+ */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido agregarpartido = new CrearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -129,26 +137,45 @@ public class Apuesta extends javax.swing.JFrame {
         agregarpartido.setTitle("Agregar nuevo partido");
         agregarpartido.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
-
+/**
+ * 
+ * @param evt Son Evntos
+ */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
-
+/**
+ * 
+ * @param evt Son Evntos
+ */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
-   
+   /**
+    * 
+    * @param n1 Variable numero 1
+    * @param n2 Variable numero 2
+    * @return 
+    */
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
     
+    /**
+     * 
+     * @param evt Son Evntos
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
+        /**
+         * Lista de las quinelas
+         * 
+         */
         for(int i = 0; i < this.listaQuiniela.getModel().getSize(); i++)
         {
             String partidoresuelto = this.listaQuiniela.getModel().getElementAt(i).toString();
@@ -172,7 +199,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+    /**
+     * 
+     * @param partido Partido que se disputa
+     */
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -186,7 +216,11 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
-  
+  /**
+   * 
+   * @param indice Lista de partido borrado
+   */
+    
     public void borraPartido(int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -200,6 +234,9 @@ public class Apuesta extends javax.swing.JFrame {
             }
         }
         
+        /**
+         * Lista de resultado
+         */
         for(int i = 0; i < this.listaResultados.getModel().getSize(); i++)
         {
             if( i != indice )
@@ -212,7 +249,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modelonuevoresultados);
     }
     
-   
+   /**
+    * 
+    * @param args Argumentos
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -251,6 +291,9 @@ public class Apuesta extends javax.swing.JFrame {
             }
         });
     }
+    /**
+     * Variables
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bEliminar;
@@ -270,6 +313,10 @@ public class Apuesta extends javax.swing.JFrame {
     private javax.swing.JPanel pQuiniela;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * 
+     * @param p Añadir partido
+     */
     void añadePartido(String p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
